@@ -894,5 +894,9 @@ function expensiveOperation(key) {
 
 ---
 
-*最終更新: 2025年11月17日*
-*バージョン: 1.1.0*
+---
+
+*最終更新: 2025年11月17日 13:30 JST*  
+*著作権: (c) 2025 KEIEI.NET INC.*  
+*作成者: KENJI OYAMA*  
+*バージョン: 1.1.1*

@@ -1,6 +1,9 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "Draw.io図のデフォルトスタイル設定（パステルカラースキーム）",
+  "lastUpdated": "2025年11月17日 13:30 JST",
+  "copyright": "(c) 2025 KEIEI.NET INC.",
+  "author": "KENJI OYAMA",
   
   "globalSettings": {
     "background": "#FFFFFF",
