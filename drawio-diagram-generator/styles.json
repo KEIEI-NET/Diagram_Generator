@@ -1,0 +1,600 @@
+{
+  "version": "1.0.0",
+  "description": "Draw.io図のデフォルトスタイル設定（パステルカラースキーム）",
+  
+  "globalSettings": {
+    "background": "#FFFFFF",
+    "gridEnabled": true,
+    "gridColor": "#E0E0E0",
+    "defaultFontSize": 12,
+    "defaultFontFamily": "Helvetica",
+    "defaultTextColor": "#000000",
+    "edgeRouting": {
+      "style": "orthogonal",
+      "avoidOverlap": true,
+      "rounded": false,
+      "jettySize": "auto"
+    }
+  },
+
+  "colorPalette": {
+    "pastelBlue": "#B3D9FF",
+    "pastelGreen": "#C5E1A5",
+    "pastelYellow": "#FFF9C4",
+    "pastelOrange": "#FFE0B2",
+    "pastelPink": "#F8BBD0",
+    "pastelPurple": "#E1BEE7",
+    "pastelCyan": "#B2EBF2",
+    "pastelLime": "#F0F4C3",
+    "white": "#FFFFFF",
+    "black": "#000000",
+    "gray": "#666666",
+    "lightGray": "#E0E0E0"
+  },
+
+  "diagramStyles": {
+    "useCase": {
+      "actor": {
+        "shape": "umlActor",
+        "fillColor": "#B3D9FF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 12
+      },
+      "useCase": {
+        "shape": "ellipse",
+        "fillColor": "#C5E1A5",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11
+      },
+      "systemBoundary": {
+        "shape": "rectangle",
+        "fillColor": "#FFFFFF",
+        "strokeColor": "#666666",
+        "strokeWidth": 3,
+        "dashed": true,
+        "fontColor": "#000000",
+        "fontSize": 14,
+        "fontStyle": "bold"
+      },
+      "association": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "endArrow": "none",
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      }
+    },
+
+    "class": {
+      "class": {
+        "shape": "swimlane",
+        "fillColor": "#B3D9FF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 12,
+        "fontStyle": "bold"
+      },
+      "interface": {
+        "shape": "swimlane",
+        "fillColor": "#E1BEE7",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 12,
+        "fontStyle": "italic"
+      },
+      "abstractClass": {
+        "shape": "swimlane",
+        "fillColor": "#FFF9C4",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 12,
+        "fontStyle": "italic"
+      },
+      "inheritance": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": 0,
+        "orthogonalLoop": 1,
+        "jettySize": "auto",
+        "endArrow": "block",
+        "endFill": 0,
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      },
+      "implementation": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": 0,
+        "orthogonalLoop": 1,
+        "jettySize": "auto",
+        "dashed": true,
+        "endArrow": "block",
+        "endFill": 0,
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      },
+      "association": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "edgeStyle": "orthogonalEdgeStyle",
+        "rounded": 0,
+        "orthogonalLoop": 1,
+        "jettySize": "auto",
+        "endArrow": "open"
+      }
+    },
+
+    "sequence": {
+      "lifeline": {
+        "header": {
+          "shape": "rectangle",
+          "fillColor": "#B3D9FF",
+          "strokeColor": "#666666",
+          "strokeWidth": 2,
+          "fontColor": "#000000",
+          "fontSize": 11
+        },
+        "line": {
+          "strokeColor": "#666666",
+          "strokeWidth": 1,
+          "dashed": true
+        }
+      },
+      "activation": {
+        "fillColor": "#D6EAFF",
+        "strokeColor": "#666666",
+        "strokeWidth": 1
+      },
+      "message": {
+        "syncCall": {
+          "strokeColor": "#666666",
+          "strokeWidth": 2,
+          "endArrow": "block",
+          "endFill": 1,
+          "labelBackgroundColor": "#FFFFFF",
+          "fontColor": "#000000"
+        },
+        "return": {
+          "strokeColor": "#666666",
+          "strokeWidth": 2,
+          "dashed": true,
+          "endArrow": "open",
+          "labelBackgroundColor": "#FFFFFF",
+          "fontColor": "#000000"
+        },
+        "asyncCall": {
+          "strokeColor": "#666666",
+          "strokeWidth": 2,
+          "endArrow": "open",
+          "labelBackgroundColor": "#FFFFFF",
+          "fontColor": "#000000"
+        }
+      }
+    },
+
+    "activity": {
+      "startNode": {
+        "shape": "ellipse",
+        "fillColor": "#000000",
+        "strokeColor": "#000000",
+        "width": 20,
+        "height": 20
+      },
+      "endNode": {
+        "shape": "doubleEllipse",
+        "fillColor": "#000000",
+        "strokeColor": "#000000",
+        "width": 24,
+        "height": 24
+      },
+      "activity": {
+        "shape": "roundedRectangle",
+        "fillColor": "#C5E1A5",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11,
+        "arcSize": 15
+      },
+      "decision": {
+        "shape": "rhombus",
+        "fillColor": "#FFF9C4",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 10,
+        "connectionPoints": {
+          "top": "exitX=0.5;exitY=0",
+          "bottom": "exitX=0.5;exitY=1",
+          "left": "exitX=0;exitY=0.5",
+          "right": "exitX=1;exitY=0.5"
+        }
+      },
+      "fork": {
+        "shape": "rectangle",
+        "fillColor": "#000000",
+        "strokeColor": "#000000",
+        "height": 5
+      },
+      "transition": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "endArrow": "block",
+        "endFill": 1,
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000",
+        "note": "判断ノードからは必ず exitX,exitY を指定して辺から矢印を出す"
+      }
+    },
+
+    "stateMachine": {
+      "state": {
+        "shape": "roundedRectangle",
+        "fillColor": "#B3D9FF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11,
+        "arcSize": 20
+      },
+      "initialState": {
+        "shape": "ellipse",
+        "fillColor": "#000000",
+        "strokeColor": "#000000",
+        "width": 20,
+        "height": 20
+      },
+      "finalState": {
+        "shape": "doubleEllipse",
+        "fillColor": "#000000",
+        "strokeColor": "#000000",
+        "width": 24,
+        "height": 24
+      },
+      "transition": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "endArrow": "block",
+        "endFill": 1,
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000",
+        "fontColor": "#000000",
+        "fontSize": 10
+      }
+    },
+
+    "component": {
+      "component": {
+        "shape": "component",
+        "fillColor": "#FFE0B2",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11
+      },
+      "interface": {
+        "shape": "ellipse",
+        "fillColor": "#FFFFFF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "width": 20,
+        "height": 20
+      },
+      "dependency": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "dashed": true,
+        "endArrow": "open",
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      }
+    },
+
+    "deployment": {
+      "node": {
+        "shape": "cube",
+        "fillColor": "#B3D9FF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11
+      },
+      "device": {
+        "shape": "cube",
+        "fillColor": "#C5E1A5",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11
+      },
+      "communication": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "endArrow": "none",
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      }
+    },
+
+    "object": {
+      "object": {
+        "shape": "rectangle",
+        "fillColor": "#F8BBD0",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11,
+        "fontStyle": "underline"
+      },
+      "link": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "endArrow": "none",
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      }
+    },
+
+    "package": {
+      "package": {
+        "shape": "folder",
+        "fillColor": "#FFF9C4",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11
+      },
+      "dependency": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "dashed": true,
+        "endArrow": "open",
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      }
+    },
+
+    "communication": {
+      "object": {
+        "shape": "rectangle",
+        "fillColor": "#B3D9FF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 11
+      },
+      "link": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "endArrow": "none",
+        "fontColor": "#000000",
+        "fontSize": 10
+      }
+    },
+
+    "er": {
+      "entity": {
+        "shape": "rectangle",
+        "fillColor": "#B3D9FF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 12,
+        "fontStyle": "bold"
+      },
+      "attribute": {
+        "shape": "ellipse",
+        "fillColor": "#C5E1A5",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 10
+      },
+      "relationship": {
+        "shape": "rhombus",
+        "fillColor": "#FFF9C4",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 10
+      },
+      "connection": {
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "endArrow": "none",
+        "labelBackgroundColor": "#FFFFFF",
+        "fontColor": "#000000"
+      }
+    },
+
+    "dataModel": {
+      "table": {
+        "shape": "swimlane",
+        "fillColor": "#B3D9FF",
+        "strokeColor": "#666666",
+        "strokeWidth": 2,
+        "fontColor": "#000000",
+        "fontSize": 12,
+        "fontStyle": "bold"
+      },
+      "column": {
+        "fillColor": "#FFFFFF",
+        "strokeColor": "none",
+        "fontColor": "#000000",
+        "fontSize": 10
+      },
+      "primaryKey": {
+        "fillColor": "#FFF9C4",
+        "strokeColor": "none",
+        "fontColor": "#000000",
+        "fontSize": 10,
+        "fontStyle": "bold"
+      },
+      "foreignKey": {
+        "fillColor": "#FFE0B2",
+        "strokeColor": "none",
+        "fontColor": "#000000",
+        "fontSize": 10,
+        "fontStyle": "italic"
+      },
+      "relation": {
+        "oneToOne": {
+          "strokeColor": "#666666",
+          "strokeWidth": 2,
+          "endArrow": "ERone",
+          "startArrow": "ERone",
+          "labelBackgroundColor": "#FFFFFF",
+          "fontColor": "#000000"
+        },
+        "oneToMany": {
+          "strokeColor": "#666666",
+          "strokeWidth": 2,
+          "endArrow": "ERmany",
+          "startArrow": "ERone",
+          "labelBackgroundColor": "#FFFFFF",
+          "fontColor": "#000000"
+        },
+        "manyToMany": {
+          "strokeColor": "#666666",
+          "strokeWidth": 2,
+          "endArrow": "ERmany",
+          "startArrow": "ERmany",
+          "labelBackgroundColor": "#FFFFFF",
+          "fontColor": "#000000"
+        }
+      }
+    }
+  },
+
+  "layoutSettings": {
+    "edgeRouting": {
+      "strategy": "orthogonal",
+      "avoidCrossings": true,
+      "minimumSegmentLength": 20,
+      "preferredEdgeLength": 80
+    },
+    "useCase": {
+      "actorSpacing": 150,
+      "useCaseSpacing": 100,
+      "horizontalMargin": 50,
+      "verticalMargin": 50
+    },
+    "class": {
+      "classSpacing": 120,
+      "horizontalMargin": 50,
+      "verticalMargin": 50
+    },
+    "sequence": {
+      "lifelineSpacing": 150,
+      "messageSpacing": 50,
+      "activationWidth": 10,
+      "frameMargin": 10,
+      "labelMargin": 10,
+      "minElementGap": 20
+    },
+    "activity": {
+      "nodeSpacing": 80,
+      "horizontalMargin": 50,
+      "verticalMargin": 50
+    },
+    "er": {
+      "entitySpacing": 150,
+      "attributeSpacing": 100
+    },
+    "dataModel": {
+      "tableSpacing": 200,
+      "columnHeight": 25
+    }
+  },
+
+  "textRules": {
+    "classNames": "preserve",
+    "methodNames": "preserve",
+    "variableNames": "preserve",
+    "labels": "japanese",
+    "descriptions": "japanese",
+    "comments": "japanese"
+  },
+
+  "connectionPointRules": {
+    "description": "全ての図形からの矢印は明示的な接続点を持つ（中心接続禁止）",
+    "shapes": {
+      "rectangle": {
+        "top": "exitX=0.5;exitY=0",
+        "bottom": "exitX=0.5;exitY=1",
+        "left": "exitX=0;exitY=0.5",
+        "right": "exitX=1;exitY=0.5"
+      },
+      "rhombus": {
+        "top": "exitX=0.5;exitY=0",
+        "bottom": "exitX=0.5;exitY=1",
+        "left": "exitX=0;exitY=0.5",
+        "right": "exitX=1;exitY=0.5",
+        "note": "ひし形は必ず頂点から矢印を出す（中心接続は禁止）"
+      },
+      "ellipse": {
+        "top": "exitX=0.5;exitY=0",
+        "bottom": "exitX=0.5;exitY=1",
+        "left": "exitX=0;exitY=0.5",
+        "right": "exitX=1;exitY=0.5"
+      },
+      "umlActor": {
+        "bottom": "exitX=0.5;exitY=1",
+        "right": "exitX=1;exitY=0.3",
+        "left": "exitX=0;exitY=0.3",
+        "recommended": "bottom"
+      },
+      "cube": {
+        "bottom": "exitX=0.5;exitY=1",
+        "right": "exitX=1;exitY=0.5",
+        "left": "exitX=0;exitY=0.5"
+      }
+    },
+    "allEdgesMustHave": [
+      "exitX",
+      "exitY",
+      "exitDx",
+      "exitDy",
+      "entryX",
+      "entryY",
+      "entryDx",
+      "entryDy",
+      "labelBackgroundColor",
+      "fontColor"
+    ]
+  },
+
+  "customThemes": {
+    "monochrome": {
+      "primary": "#E0E0E0",
+      "secondary": "#BDBDBD",
+      "accent": "#9E9E9E",
+      "text": "#212121",
+      "border": "#757575"
+    },
+    "highContrast": {
+      "primary": "#000000",
+      "secondary": "#FFFFFF",
+      "accent": "#FF0000",
+      "text": "#000000",
+      "border": "#000000"
+    },
+    "darkMode": {
+      "background": "#1E1E1E",
+      "primary": "#264653",
+      "secondary": "#2A9D8F",
+      "accent": "#E76F51",
+      "text": "#FFFFFF",
+      "border": "#FFFFFF"
+    }
+  }
+}

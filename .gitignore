@@ -1,0 +1,27 @@
+# ログファイル
+*.log
+install.log
+
+# Serenaキャッシュ
+.serena/cache/
+.serena/memories/
+
+# OSファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# エディタ
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# 一時ファイル
+*.tmp
+*.temp
+*.bak
+
+# バックアップ
+*_backup_*/

@@ -1,0 +1,341 @@
+<mxfile host="app.diagrams.net" modified="2025-11-17T04:31:53.000Z" agent="Claude" version="1.1.0">
+  <diagram name="インストールフロー" id="install-flow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- タイトル -->
+        <mxCell id="title" value="Diagram Skills インストールフローシーケンス図" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="600" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- ライフライン: User -->
+        <mxCell id="lifeline-user-header" value="User&#xa;ユーザー" style="shape=rectangle;fillColor=#B3D9FF;strokeColor=#666666;strokeWidth=2;fontColor=#000000;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="100" y="80" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline-user-line" value="" style="strokeColor=#666666;strokeWidth=2;dashed=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="140" as="sourcePoint"/>
+            <mxPoint x="160" y="1500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ライフライン: install.sh -->
+        <mxCell id="lifeline-script-header" value="install.sh&#xa;インストーラー" style="shape=rectangle;fillColor=#C5E1A5;strokeColor=#666666;strokeWidth=2;fontColor=#000000;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="300" y="80" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline-script-line" value="" style="strokeColor=#666666;strokeWidth=2;dashed=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="140" as="sourcePoint"/>
+            <mxPoint x="360" y="1500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ライフライン: FileSystem -->
+        <mxCell id="lifeline-fs-header" value="FileSystem&#xa;ファイルシステム" style="shape=rectangle;fillColor=#FFF9C4;strokeColor=#666666;strokeWidth=2;fontColor=#000000;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="80" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline-fs-line" value="" style="strokeColor=#666666;strokeWidth=2;dashed=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="140" as="sourcePoint"/>
+            <mxPoint x="560" y="1500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ライフライン: SkillsDir -->
+        <mxCell id="lifeline-skills-header" value="~/.claude/skills&#xa;Skillsディレクトリ" style="shape=rectangle;fillColor=#FFE0B2;strokeColor=#666666;strokeWidth=2;fontColor=#000000;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="700" y="80" width="140" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline-skills-line" value="" style="strokeColor=#666666;strokeWidth=2;dashed=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="140" as="sourcePoint"/>
+            <mxPoint x="770" y="1500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ライフライン: BackupDir -->
+        <mxCell id="lifeline-backup-header" value="BackupDir&#xa;バックアップ" style="shape=rectangle;fillColor=#F8BBD0;strokeColor=#666666;strokeWidth=2;fontColor=#000000;fontSize=11;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="920" y="80" width="120" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="lifeline-backup-line" value="" style="strokeColor=#666666;strokeWidth=2;dashed=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="140" as="sourcePoint"/>
+            <mxPoint x="980" y="1500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ1: 実行開始 -->
+        <mxCell id="msg1" value="./install.sh 実行" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1" source="lifeline-user-line" target="lifeline-script-line">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="160" y="180" as="sourcePoint"/>
+            <mxPoint x="360" y="180" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- アクティベーション1: install.sh実行中 -->
+        <mxCell id="activation-script-1" value="" style="shape=rectangle;fillColor=#D6EAFF;strokeColor=#666666;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="355" y="180" width="10" height="1280" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ2: バナー表示 -->
+        <mxCell id="msg2" value="バナー表示" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="220" as="sourcePoint"/>
+            <mxPoint x="160" y="220" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ノート: フェーズ1 -->
+        <mxCell id="note-phase1" value="フェーズ1: 前提条件チェック" style="shape=note;fillColor=#E1BEE7;strokeColor=#666666;strokeWidth=1;fontColor=#000000;fontSize=10;size=15;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="180" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ3: Claude Code確認 -->
+        <mxCell id="msg3" value="Claude Code存在確認" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="320" as="sourcePoint"/>
+            <mxPoint x="560" y="320" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ4: Claude Code存在 -->
+        <mxCell id="msg4" value="存在確認OK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="350" as="sourcePoint"/>
+            <mxPoint x="360" y="350" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ5: ディレクトリ確認 -->
+        <mxCell id="msg5" value="drawio/mermaidディレクトリ確認" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="390" as="sourcePoint"/>
+            <mxPoint x="560" y="390" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ6: ディレクトリ存在 -->
+        <mxCell id="msg6" value="ディレクトリ存在OK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="420" as="sourcePoint"/>
+            <mxPoint x="360" y="420" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ7: ステータス報告 -->
+        <mxCell id="msg7" value="✅ 前提条件OK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="460" as="sourcePoint"/>
+            <mxPoint x="160" y="460" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ノート: フェーズ2 -->
+        <mxCell id="note-phase2" value="フェーズ2: ディレクトリ準備" style="shape=note;fillColor=#E1BEE7;strokeColor=#666666;strokeWidth=1;fontColor=#000000;fontSize=10;size=15;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="500" width="180" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ8: Skillsディレクトリ確認 -->
+        <mxCell id="msg8" value="~/.claude/skills存在確認" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="560" as="sourcePoint"/>
+            <mxPoint x="770" y="560" as="targetPoint"/>
+            <mxPoint as="offset"/>
+            <Array as="points">
+              <mxPoint x="565" y="560"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- alt フレーム: ディレクトリ存在 -->
+        <mxCell id="alt-frame-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F8FF;strokeColor=#B3D9FF;strokeWidth=2;arcSize=5" vertex="1" parent="1">
+          <mxGeometry x="330" y="590" width="480" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="alt-frame-1-label" value="alt [ディレクトリ存在確認]" style="text;html=1;strokeColor=none;fillColor=#E3F2FD;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="335" y="595" width="160" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ9a: ディレクトリ存在 -->
+        <mxCell id="msg9a" value="[存在する] 確認OK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="620" as="sourcePoint"/>
+            <mxPoint x="360" y="620" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ9b: ディレクトリ作成 -->
+        <mxCell id="msg9b-label" value="[存在しない場合]" style="text;html=1;strokeColor=none;fillColor=#E3F2FD;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=9;fontColor=#000000;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="340" y="650" width="110" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="msg9b" value="mkdir -p ~/.claude/skills" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="670" as="sourcePoint"/>
+            <mxPoint x="770" y="670" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ノート: フェーズ3 -->
+        <mxCell id="note-phase3" value="フェーズ3: バックアップ作成" style="shape=note;fillColor=#E1BEE7;strokeColor=#666666;strokeWidth=1;fontColor=#000000;fontSize=10;size=15;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="730" width="180" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ10: バックアップディレクトリ作成 -->
+        <mxCell id="msg10" value="mkdir バックアップディレクトリ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="790" as="sourcePoint"/>
+            <mxPoint x="980" y="790" as="targetPoint"/>
+            <mxPoint as="offset"/>
+            <Array as="points">
+              <mxPoint x="670" y="790"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ11: 既存スキル確認 -->
+        <mxCell id="msg11" value="既存diagram-skills確認" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="830" as="sourcePoint"/>
+            <mxPoint x="770" y="830" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- opt フレーム: 既存スキルあり -->
+        <mxCell id="opt-frame-1" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F0F8FF;strokeColor=#B3D9FF;strokeWidth=2;arcSize=5" vertex="1" parent="1">
+          <mxGeometry x="330" y="860" width="680" height="100" as="geometry"/>
+        </mxCell>
+        <mxCell id="opt-frame-1-label" value="opt [既存スキルがある場合]" style="text;html=1;strokeColor=none;fillColor=#E3F2FD;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=10;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="335" y="865" width="170" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ12: バックアップコピー -->
+        <mxCell id="msg12-label" value="[既存スキルがある場合]" style="text;html=1;strokeColor=none;fillColor=#E3F2FD;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=9;fontColor=#000000;fontStyle=2" vertex="1" parent="1">
+          <mxGeometry x="340" y="895" width="140" height="18" as="geometry"/>
+        </mxCell>
+        <mxCell id="msg12" value="cp -r 既存Skills → BackupDir" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="910" as="sourcePoint"/>
+            <mxPoint x="980" y="910" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ13: バックアップ確認 -->
+        <mxCell id="msg13" value="✅ バックアップ完了" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="980" y="940" as="sourcePoint"/>
+            <mxPoint x="360" y="940" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ノート: フェーズ4 -->
+        <mxCell id="note-phase4" value="フェーズ4: スキルインストール" style="shape=note;fillColor=#E1BEE7;strokeColor=#666666;strokeWidth=1;fontColor=#000000;fontSize=10;size=15;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="980" width="180" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ14: drawio-diagram-generatorコピー -->
+        <mxCell id="msg14" value="cp drawio-diagram-generator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1040" as="sourcePoint"/>
+            <mxPoint x="770" y="1040" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ15: mermaid-diagram-generatorコピー -->
+        <mxCell id="msg15" value="cp mermaid-diagram-generator" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1080" as="sourcePoint"/>
+            <mxPoint x="770" y="1080" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ16: パーミッション設定 -->
+        <mxCell id="msg16" value="chmod -R 755" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1120" as="sourcePoint"/>
+            <mxPoint x="770" y="1120" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- ノート: フェーズ5 -->
+        <mxCell id="note-phase5" value="フェーズ5: 検証" style="shape=note;fillColor=#E1BEE7;strokeColor=#666666;strokeWidth=1;fontColor=#000000;fontSize=10;size=15;align=left" vertex="1" parent="1">
+          <mxGeometry x="40" y="1160" width="180" height="40" as="geometry"/>
+        </mxCell>
+
+        <!-- メッセージ17: ファイル検証 -->
+        <mxCell id="msg17" value="SKILL.md, styles.json存在確認" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1220" as="sourcePoint"/>
+            <mxPoint x="770" y="1220" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ18: 検証OK -->
+        <mxCell id="msg18" value="全ファイル存在OK" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="1250" as="sourcePoint"/>
+            <mxPoint x="360" y="1250" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ19: クリーンアップ -->
+        <mxCell id="msg19" value="古いバックアップ削除（30日以上前）" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;endArrow=block;endFill=1;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1290" as="sourcePoint"/>
+            <mxPoint x="560" y="1290" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ20: 完了通知 -->
+        <mxCell id="msg20" value="✅ インストール完了！" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1340" as="sourcePoint"/>
+            <mxPoint x="160" y="1340" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- メッセージ21: 使用方法表示 -->
+        <mxCell id="msg21" value="使用方法とコマンド表示" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1380" as="sourcePoint"/>
+            <mxPoint x="160" y="1380" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 終了 -->
+        <mxCell id="msg22" value="終了" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#666666;strokeWidth=2;dashed=1;endArrow=open;fontColor=#000000;fontSize=10;labelBackgroundColor=#FFFFFF" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="360" y="1440" as="sourcePoint"/>
+            <mxPoint x="160" y="1440" as="targetPoint"/>
+            <mxPoint as="offset"/>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 注釈 -->
+        <mxCell id="annotation" value="📝 注記:&#xa;- エラー発生時は自動ロールバック&#xa;- バックアップから復元&#xa;- 詳細ログは install.log に記録" style="shape=note;fillColor=#FFF9C4;strokeColor=#666666;strokeWidth=1;fontColor=#000000;fontSize=9;size=15;align=left;whiteSpace=wrap" vertex="1" parent="1">
+          <mxGeometry x="40" y="1380" width="200" height="80" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
