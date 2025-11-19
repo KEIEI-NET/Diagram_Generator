@@ -559,6 +559,349 @@ result.recommendations.forEach(rec => {
 
 ---
 
+## よくある構文エラーと回避方法 🚫→✅
+
+このセクションでは、Mermaid図生成時によく発生する構文エラーと、その回避・修正方法を説明します。
+
+### 1. 矢印記法のエラー
+
+#### ❌ エラー例
+
+```mermaid
+classDiagram
+    A -> B   %% 無効な矢印
+    C > D    %% 無効な矢印
+```
+
+#### ✅ 正しい記法
+
+```mermaid
+classDiagram
+    A --> B   %% 関連
+    C --|> D  %% 継承
+    E ..> F   %% 依存
+```
+
+**有効な矢印一覧**:
+- `-->`: 関連
+- `--`: 線のみ
+- `-.->`: 点線関連
+- `==>`: 太線関連
+- `--|>`: 継承
+- `..|>`: 実装
+- `--o`: 集約
+- `--*`: コンポジション
+
+### 2. 特殊文字のエスケープエラー
+
+#### ❌ エラー例
+
+```mermaid
+sequenceDiagram
+    A->>B: <getData>を呼び出し   %% < > が問題
+    B->>C: {response}を返す      %% { } が問題
+```
+
+#### ✅ 正しい記法
+
+```mermaid
+sequenceDiagram
+    A->>B: getDataを呼び出し
+    B->>C: responseを返す
+```
+
+**回避方法**:
+- 特殊文字 `< > { } # ( )` は可能な限り使用しない
+- クラス図のメソッド定義内のみ `()` 使用可能
+- どうしても必要な場合は引用符で囲む: `"<getData>()"`
+
+### 3. 引用符の閉じ忘れ
+
+#### ❌ エラー例
+
+```mermaid
+flowchart TD
+    A["ユーザー登録] --> B[確認]   %% 引用符が閉じていない
+```
+
+#### ✅ 正しい記法
+
+```mermaid
+flowchart TD
+    A["ユーザー登録"] --> B[確認]
+```
+
+### 4. 無効なダイアグラム宣言
+
+#### ❌ エラー例
+
+```mermaid
+class-diagram   %% ハイフンは無効
+sequencechart   %% chartは無効
+```
+
+#### ✅ 正しい記法
+
+```mermaid
+classDiagram
+sequenceDiagram
+stateDiagram-v2
+erDiagram
+flowchart TB
+```
+
+**有効な宣言**:
+- `classDiagram`
+- `sequenceDiagram`
+- `stateDiagram-v2` (v2必須)
+- `erDiagram`
+- `flowchart TB/TD/LR/RL`
+- `graph TB/TD/LR/RL` (非推奨、flowchart推奨)
+
+### 5. コメントの誤った記法
+
+#### ❌ エラー例
+
+```mermaid
+classDiagram
+    // これはコメント      %% 無効（JavaScriptスタイル）
+    <!-- コメント -->     %% 無効（HTMLスタイル）
+```
+
+#### ✅ 正しい記法
+
+```mermaid
+classDiagram
+    %% これがMermaidのコメント
+```
+
+### 6. ネストの深すぎる図
+
+#### ❌ エラー例（複雑すぎる）
+
+```mermaid
+sequenceDiagram
+    A->>B: リクエスト
+    alt 認証成功
+        B->>C: データ取得
+        alt データあり
+            loop 各データ
+                alt 有効
+                    C->>D: 処理   %% 3階層目のネスト
+                end
+            end
+        end
+    end
+```
+
+#### ✅ 正しい記法（簡素化）
+
+```mermaid
+sequenceDiagram
+    A->>B: リクエスト
+    alt 認証成功
+        B->>C: データ取得
+        C->>D: 処理
+    else 認証失敗
+        B->>A: エラー
+    end
+```
+
+**ルール**: ネスト（alt, loop, opt）は2階層まで
+
+### 7. 日本語ラベルの問題
+
+#### ❌ エラー例
+
+```mermaid
+classDiagram
+    class ユーザークラス   %% クラス名に日本語（非推奨）
+```
+
+#### ✅ 正しい記法
+
+```mermaid
+classDiagram
+    class UserClass {
+        <<ユーザー>>   %% ステレオタイプとして日本語使用
+    }
+```
+
+**推奨**: クラス名・メソッド名は英語、説明・ラベルに日本語
+
+### 8. 要素数の超過
+
+#### ❌ エラー例
+
+```mermaid
+classDiagram
+    %% 20個以上のクラスを定義...
+```
+
+#### ✅ 正しい記法
+
+**図を分割**:
+
+```mermaid
+%% 図1: プレゼンテーション層
+classDiagram
+    class Controller
+    class View
+    class Router
+```
+
+```mermaid
+%% 図2: ビジネス層
+classDiagram
+    class Service
+    class Repository
+```
+
+---
+
+## 構文エラー検出パターン（パターンマッチング）
+
+Mermaidコードを生成後、以下のパターンでエラーをチェックできます：
+
+### チェック1: 無効な矢印
+
+**検出パターン**:
+```regex
+(?<!-)->(?!>)   # 単一の > を検出
+(?<!\.\.)\.\. (?!\.)   # 単一または奇数個の . を検出
+```
+
+### チェック2: 閉じていない引用符
+
+**検出パターン**:
+```regex
+"[^"]*$   # 行末で閉じていない "
+\[[^\]]*$   # 行末で閉じていない [
+```
+
+### チェック3: 無効な宣言
+
+**検出パターン**:
+```regex
+^(?!classDiagram|sequenceDiagram|stateDiagram-v2|erDiagram|flowchart|graph)
+```
+
+### チェック4: JavaScriptスタイルのコメント
+
+**検出パターン**:
+```regex
+^\s*//   # 行頭の //
+<!--     # HTMLコメント
+```
+
+### チェック5: ラベルの長さ
+
+**検出パターン**:
+```regex
+["[](.{31,})["\]]   # 31文字以上のラベル
+```
+
+---
+
+## エラー自動修正の例
+
+### 修正1: 無効な矢印の置換
+
+```javascript
+// 無効な矢印を有効な矢印に変換
+code = code.replace(/(?<!-)>(?!>)/g, '-->');
+code = code.replace(/(?<!-)-(?!-)/g, '-->');
+```
+
+### 修正2: 特殊文字の除去
+
+```javascript
+// ラベル内の特殊文字を除去
+code = code.replace(/<([^>]+)>/g, '$1');
+code = code.replace(/\{([^}]+)\}/g, '$1');
+```
+
+### 修正3: 長いラベルの短縮
+
+```javascript
+// 30文字を超えるラベルを短縮
+code = code.replace(/"([^"]{28})[^"]{3,}"/g, '"$1..."');
+```
+
+---
+
+## 禁止パターン一覧（図タイプ別）
+
+### クラス図
+
+**禁止**:
+- クラス名に特殊文字: `class User<T>`（ジェネリクスは非サポート）
+- 複数行の属性定義
+- ネストされたクラス定義
+
+**推奨**:
+```mermaid
+classDiagram
+    class User {
+        +id: string
+        +getName() string
+    }
+```
+
+### シーケンス図
+
+**禁止**:
+- 未定義の参加者へのメッセージ
+- 4階層以上のネスト（alt, loop, opt）
+- 複数の並行ブロック（par）の過度な使用
+
+**推奨**:
+```mermaid
+sequenceDiagram
+    participant A
+    participant B
+    A->>B: メッセージ
+    alt 条件
+        B->>A: 応答1
+    else
+        B->>A: 応答2
+    end
+```
+
+### ステートマシン図
+
+**禁止**:
+- 3階層以上の状態のネスト
+- 循環する遷移の複雑な定義
+- [*]以外の特殊状態
+
+**推奨**:
+```mermaid
+stateDiagram-v2
+    [*] --> Active
+    Active --> Inactive
+    Inactive --> [*]
+```
+
+### ER図
+
+**禁止**:
+- 多対多の直接関係（中間テーブル推奨）
+- 10個以上の属性
+- ネストされたエンティティ
+
+**推奨**:
+```mermaid
+erDiagram
+    USER ||--o{ ORDER : places
+    USER {
+        int id PK
+        string name
+    }
+```
+
+---
+
 ---
 
 *最終更新: 2025年11月17日 13:30 JST*  

@@ -1,0 +1,27 @@
+```mermaid
+classDiagram
+    %% これはテスト用のクラス図です
+
+    class UserService {
+        -userId: string
+        -userName: string
+        +getUserById(id: string) User
+        +createUser(data: UserData) User
+    }
+
+    class UserRepository {
+        +findById(id: string) User
+        +save(user: User) void
+    }
+
+    class User {
+        +id: string
+        +name: string
+        +email: string
+    }
+
+    %% リレーション
+    UserService ..> UserRepository : 使用
+    UserService ..> User : 生成
+    UserRepository ..> User : 永続化
+```
